@@ -37,9 +37,6 @@ const ProtectedRoute = ({ children }) => {
 const ProtectVerify = ({ children }) => {
   const { isAuthenticated } = useAuthStore();
 
-  if (!isAuthenticated) {
-    return <Navigate to="/login" replace />
-  }
   if (isAuthenticated) {
     return <Navigate to="/" replace />
   }
