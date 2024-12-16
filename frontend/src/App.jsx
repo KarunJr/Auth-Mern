@@ -34,14 +34,15 @@ const ProtectedRoute = ({ children }) => {
 
 
 //Protecting the verify-email route:
+/*
 const ProtectVerify = ({ children }) => {
   const { isAuthenticated } = useAuthStore();
 
   if (isAuthenticated) {
-    return <Navigate to="/" replace />
+    return <Navigate to="/verify-email" replace />
   }
   return children;
-}
+}*/
 
 //Redirect authenticated user to home page:
 const RedirectAuthenticatedUser = ({ children }) => {
@@ -85,10 +86,10 @@ function App() {
           <LoginPage />
         </RedirectAuthenticatedUser>} />
 
-        <Route path='/verify-email' element={<ProtectVerify>
+        {/* <Route path='/verify-email' element={<ProtectVerify>
           <EmailVerification />
-        </ProtectVerify>} />
-        {/* <Route path='/verify-email' element={<EmailVerification />} /> */}
+        </ProtectVerify>} /> */}
+        <Route path='/verify-email' element={<EmailVerification />} />
 
         <Route path='/forgot-password' element={<RedirectAuthenticatedUser>
           <ForgotPasswordPage />
